@@ -9,7 +9,6 @@ import Foundation
 
 //MARK: - UseCase protocol
 protocol WalkDogUseCase: UseCase {
-    associatedtype Result: Any
     associatedtype Params: RequestValues
     typealias Completion = InfoCompletion
     
@@ -19,7 +18,6 @@ protocol WalkDogUseCase: UseCase {
 //MARK: - UseCase implementation
 class WalkDogUseCaseImpl: WalkDogUseCase {
 
-    typealias Result = Bool
     typealias Params = DogRequestValue
 
     var repository: DogsRepository

@@ -10,7 +10,6 @@ import RxSwift
 
 //MARK: - UseCase protocol
 protocol FetchCurrentWeatherUseCase {
-    associatedtype Result: Any
     associatedtype Params: RequestValues
     typealias Completion = WeatherCompletion
     
@@ -22,7 +21,6 @@ class FetchCurrentWeatherUseCaseImpl: FetchCurrentWeatherUseCase {
     
     let disposeBag = DisposeBag()
     
-    typealias Result = WeatherInfo
     typealias Params = CityRequestValue
     
     func execute(_ requestValues: CityRequestValue, completion: @escaping Completion) {

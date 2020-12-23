@@ -9,7 +9,6 @@ import Foundation
 
 //MARK: - UseCase protocol
 protocol FetchDogHoldersUseCase: UseCase {
-    associatedtype Result: Any
     typealias Completion = DogHoldersCompletion
     
     func execute(completion: @escaping Completion)
@@ -17,9 +16,7 @@ protocol FetchDogHoldersUseCase: UseCase {
 
 //MARK: - UseCase implementation
 class FetchDogHoldersUseCaseImpl: FetchDogHoldersUseCase {
-        
-    typealias Result = [DogHolder]
-    
+
     var repository: DogsRepository
     
     init(dogsRepository: DogsRepository) {

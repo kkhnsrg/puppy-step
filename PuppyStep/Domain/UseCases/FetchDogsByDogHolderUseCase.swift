@@ -9,7 +9,6 @@ import Foundation
 
 //MARK: - UseCase protocol
 protocol FetchDogsByDogHolderUseCase: UseCase {
-    associatedtype Result: Any
     associatedtype Params: RequestValues
     typealias Completion = DogsCompletion
     
@@ -19,7 +18,6 @@ protocol FetchDogsByDogHolderUseCase: UseCase {
 //MARK: - UseCase implementation
 class FetchDogsByDogHolderUseCaseImpl: FetchDogsByDogHolderUseCase {
     
-    typealias Result = [Dog]
     typealias Params = DogHolderRequestValue
     
     var repository: DogsRepository
